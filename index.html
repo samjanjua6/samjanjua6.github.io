@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaheer Ul Hassan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light gray background */
+            color: #1a202c; /* Darker text for better contrast */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6; /* A nice blue for hover */
+        }
+        .section-title {
+            border-bottom: 3px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Custom scrollbar for a more modern feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* AI Feature Button Style */
+        .ai-button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .ai-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Simple Spinner Animation */
+        .spinner {
+            border: 2px solid rgba(0,0,0,.1);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border-left-color: #fff;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Shaheer.dev</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-gray-600">Home</a>
+                <a href="#about" class="nav-link text-gray-600">About</a>
+                <a href="#projects" class="nav-link text-gray-600">Projects</a>
+                <a href="#certifications" class="nav-link text-gray-600">Certifications</a>
+                <a href="#contact" class="nav-link text-gray-600">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 text-gray-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-600">About</a>
+            <a href="#projects" class="block py-2 text-gray-600">Projects</a>
+            <a href="#certifications" class="block py-2 text-gray-600">Certifications</a>
+            <a href="#contact" class="block py-2 text-gray-600">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center bg-white pt-20">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Hi, I'm Shaheer Ul Hassan
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-600">
+                        A Computer Science student from Gujrat, Pakistan, with a passion for Machine Learning, AI, and building beautiful, functional websites.
+                    </p>
+                    <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                        <a href="#contact" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-300 transition-transform transform hover:scale-105">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=Your+Photo" alt="Shaheer Ul Hassan" class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl font-bold mb-12 text-center">About Me</h2>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-10">
+                    <div class="flex-shrink-0">
+                         <img src="https://placehold.co/500x500/E2E8F0/4A5568?text=Another+Photo" alt="About Shaheer" class="rounded-lg shadow-md w-48 h-48 md:w-64 md:h-64 object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Computer Science Student at UOG, Gujrat</h3>
+                        <div id="bio-content">
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                I am a dedicated and ambitious computer science student currently pursuing my degree at the University of Gujrat. My journey into the world of technology is driven by a deep curiosity and a desire to solve real-world problems. I thrive on challenges and am constantly seeking to expand my knowledge and skills.
+                            </p>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Through platforms like Coursera, I've dived deep into specializations like Machine Learning, Artificial Intelligence, SEO, and modern Web Development. I'm passionate about leveraging these skills to create intelligent systems and engaging user experiences. My goal is to contribute to innovative projects that make a difference.
+                            </p>
+                        </div>
+                        <div id="ai-bio-result" class="hidden p-4 bg-blue-50 border border-blue-200 rounded-lg my-4 text-gray-700"></div>
+                         <div class="mt-6">
+                            <div class="flex items-center gap-4 flex-wrap">
+                               <button id="rewrite-bio-btn" class="ai-button text-white font-semibold px-5 py-2.5 rounded-lg flex items-center gap-2">
+                                   ✨ Rewrite with AI
+                               </button>
+                               <div id="bio-tone-selector" class="hidden flex items-center gap-2">
+                                    <select id="bio-tone" class="border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        <option value="more professional">More Professional</option>
+                                        <option value="more concise">More Concise</option>
+                                        <option value="more enthusiastic">More Enthusiastic</option>
+                                    </select>
+                                   <button id="generate-bio-rewrite" class="bg-gray-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-gray-700 flex items-center">Go</button>
+                               </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-3xl font-bold mb-4 inline-block">My Projects</h2>
+                    <div class="mt-6">
+                        <button id="generate-project-idea-btn" class="ai-button text-white font-bold py-3 px-6 rounded-lg flex items-center gap-2 mx-auto">
+                            ✨ Generate a New Project Idea
+                        </button>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card bg-slate-50 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=ML/AI+Project" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Machine Learning Model</h3>
+                            <p class="text-gray-600 mb-4">A predictive model for stock prices using LSTM neural networks.</p>
+                            <a href="#" class="text-blue-600 font-semibold hover:underline">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="card bg-slate-50 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Web+Dev+Project" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">E-commerce Website</h3>
+                            <p class="text-gray-600 mb-4">A full-stack e-commerce platform with features like product catalog, shopping cart, and user authentication.</p>
+                            <a href="#" class="text-green-600 font-semibold hover:underline">Live Demo &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="card bg-slate-50 rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x400/F59E0B/FFFFFF?text=SEO+Project" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">SEO Case Study</h3>
+                            <p class="text-gray-600 mb-4">An analysis of a website's SEO performance and implemented strategies.</p>
+                            <a href="#" class="text-orange-500 font-semibold hover:underline">Read Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl font-bold mb-12 text-center">My Certifications</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                     <div class="card bg-white p-6 rounded-lg shadow-md flex items-center space-x-6"><h3 class="text-lg font-semibold">Multiple Coursera Certifications in ML, AI, Web Dev & SEO.</h3><a href="#" class="ml-auto text-blue-600 font-semibold hover:underline whitespace-nowrap">View All &rarr;</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl font-bold mb-4 text-center">Contact Me</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                    I'm currently looking for new opportunities and collaborations. Feel free to send me a message!
+                </p>
+                <div class="max-w-xl mx-auto bg-slate-50 p-8 rounded-xl shadow-lg">
+                    <form action="#" method="POST" id="contact-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                         <div class="mb-4">
+                            <label for="keywords" class="block text-gray-700 font-semibold mb-2">What's your message about? (keywords)</label>
+                            <input type="text" id="keywords" name="keywords" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., job opportunity, project collaboration, question">
+                        </div>
+                        <button type="button" id="draft-message-btn" class="ai-button w-full text-white font-semibold px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 mb-4">
+                            ✨ Help me write my message
+                        </button>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Shaheer Ul Hassan. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- AI Project Idea Modal -->
+    <div id="project-idea-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">&times;</button>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">✨ New Project Idea</h3>
+            <div id="project-idea-content" class="text-gray-600 space-y-4">
+                <!-- AI content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // --- START: Gemini API Integration ---
+
+    // IMPORTANT: In a real-world application, this key should be handled securely and not exposed on the client-side.
+    // The Canvas environment will handle providing a key. For local testing, you would need to get your own API key from Google AI Studio.
+    const API_KEY = "";
+
+    /**
+     * A generic function to call the Gemini API.
+     * @param {string} prompt The text prompt to send to the model.
+     * @returns {Promise<string>} The generated text from the model.
+     */
+    async function callGemini(prompt) {
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+        
+        let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+        const payload = { contents: chatHistory };
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errorBody = await response.json();
+                console.error("API Error:", errorBody);
+                throw new Error(`API request failed with status ${response.status}. See console for details.`);
+            }
+
+            const result = await response.json();
+
+            if (result.candidates && result.candidates.length > 0 &&
+                result.candidates[0].content && result.candidates[0].content.parts &&
+                result.candidates[0].content.parts.length > 0) {
+                return result.candidates[0].content.parts[0].text;
+            } else {
+                console.warn("Unexpected API response structure:", result);
+                if (result.promptFeedback && result.promptFeedback.blockReason) {
+                     throw new Error(`Request was blocked: ${result.promptFeedback.blockReason}. ${result.promptFeedback.blockReasonMessage || ''}`);
+                }
+                throw new Error("Received an empty or unexpected response from the API.");
+            }
+        } catch (error) {
+            console.error("Error calling Gemini API:", error);
+            throw error; // Re-throw the error to be handled by the caller
+        }
+    }
+
+    /**
+     * Sets the state of a button to show it's loading.
+     * @param {HTMLElement} button The button element.
+     * @param {boolean} isLoading Whether to show the loading state.
+     * @param {string} originalContent The original button text content.
+     */
+    function setButtonLoading(button, isLoading, originalContent = '') {
+        if (isLoading) {
+            button.disabled = true;
+            button.dataset.originalContent = button.innerHTML;
+            button.innerHTML = '<div class="spinner"></div>';
+        } else {
+            button.disabled = false;
+            button.innerHTML = button.dataset.originalContent || originalContent;
+        }
+    }
+
+
+    // --- Feature 1: AI Bio Rewriter ---
+    const rewriteBioBtn = document.getElementById('rewrite-bio-btn');
+    const bioToneSelector = document.getElementById('bio-tone-selector');
+    const generateBioRewriteBtn = document.getElementById('generate-bio-rewrite');
+    const aiBioResultDiv = document.getElementById('ai-bio-result');
+
+    rewriteBioBtn.addEventListener('click', () => {
+        rewriteBioBtn.classList.add('hidden');
+        bioToneSelector.classList.remove('hidden');
+    });
+
+    generateBioRewriteBtn.addEventListener('click', async () => {
+        const originalBio = document.getElementById('bio-content').innerText;
+        const selectedTone = document.getElementById('bio-tone').value;
+        const prompt = `Rewrite the following text about a computer science student in a ${selectedTone} tone. Make it engaging for a potential employer. Keep it to 2-3 short paragraphs. TEXT: "${originalBio}"`;
+        
+        setButtonLoading(generateBioRewriteBtn, true);
+        aiBioResultDiv.classList.add('hidden');
+
+        try {
+            const rewrittenBio = await callGemini(prompt);
+            aiBioResultDiv.innerHTML = rewrittenBio.replace(/\n/g, '<br>');
+            aiBioResultDiv.classList.remove('hidden');
+        } catch (error) {
+            aiBioResultDiv.innerText = `Sorry, something went wrong. ${error.message}`;
+            aiBioResultDiv.classList.remove('hidden');
+            aiBioResultDiv.classList.add('text-red-500');
+        } finally {
+            setButtonLoading(generateBioRewriteBtn, false, 'Go');
+        }
+    });
+
+
+    // --- Feature 2: AI Project Idea Generator ---
+    const generateIdeaBtn = document.getElementById('generate-project-idea-btn');
+    const projectIdeaModal = document.getElementById('project-idea-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const projectIdeaContent = document.getElementById('project-idea-content');
+
+    generateIdeaBtn.addEventListener('click', async () => {
+        const prompt = "I am a computer science student skilled in Machine Learning, AI, Web Development, and SEO. Suggest one novel and interesting project idea for my portfolio. Provide a catchy title as a heading, followed by a 2-3 sentence description of the project and the key technologies to use.";
+        
+        projectIdeaContent.innerHTML = '<div class="flex justify-center"><div class="spinner" style="border-left-color: #3b82f6;"></div></div>';
+        projectIdeaModal.classList.remove('hidden');
+        projectIdeaModal.classList.add('flex');
+        
+        try {
+            const idea = await callGemini(prompt);
+            projectIdeaContent.innerHTML = idea.replace(/\n/g, '<br>').replace(/(\*\*|### |## )/g, '');
+        } catch (error) {
+            projectIdeaContent.innerHTML = `<p class="text-red-500">Could not generate an idea at the moment. Please try again later. ${error.message}</p>`;
+        }
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        projectIdeaModal.classList.add('hidden');
+        projectIdeaModal.classList.remove('flex');
+    });
+    
+    // Close modal on outside click
+    projectIdeaModal.addEventListener('click', (e) => {
+        if (e.target === projectIdeaModal) {
+            projectIdeaModal.classList.add('hidden');
+            projectIdeaModal.classList.remove('flex');
+        }
+    });
+
+
+    // --- Feature 3: AI-Assisted Contact Form ---
+    const draftMessageBtn = document.getElementById('draft-message-btn');
+    const keywordsInput = document.getElementById('keywords');
+    const messageTextarea = document.getElementById('message');
+
+    draftMessageBtn.addEventListener('click', async () => {
+        const keywords = keywordsInput.value;
+        if (!keywords.trim()) {
+            alert("Please enter some keywords about your message first.");
+            return;
+        }
+
+        const prompt = `A person wants to send a message to me (Shaheer, a CS student) via a portfolio contact form. They've provided the following keywords about their inquiry: "${keywords}". Draft a professional, friendly, and clear message for them to send. The message should be from their perspective, ready to be copied into the message box. Do not include a subject line or greetings like "Dear Shaheer,".`;
+        
+        setButtonLoading(draftMessageBtn, true);
+        messageTextarea.value = 'Generating message...';
+
+        try {
+            const draftedMessage = await callGemini(prompt);
+            messageTextarea.value = draftedMessage;
+        } catch (error) {
+            messageTextarea.value = `Failed to draft message. Please write your own or try again. ${error.message}`;
+        } finally {
+            setButtonLoading(draftMessageBtn, false, '✨ Help me write my message');
+        }
+    });
+
+    // --- END: Gemini API Integration ---
+
+
+    // --- START: Original Website Interactivity ---
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Hide mobile menu on click
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if(targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    // --- END: Original Website Interactivity ---
+    </script>
+</body>
+</html>
